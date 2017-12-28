@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GOLD!</title>
+    <LINK href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+        <div class="row">
+                <div class="col-sm-3">
+                        Arkhana
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                        <th scope="col">item</th>
+                                        <th scope="col">vendedor</th>
+                                        <th (click)="sort('buyout')" scope="col">buyout</th>
+                                        <th (click)="sort('quantity')" scope="col">qtd</th>
+                                        <th (click)="sort('unitPrice')" scope="col">unitPrice</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr  *ngFor="let arkhana of arkhanas | orderBy: key : reverse">
+                                                <td>{{arkhana.item}}</td>
+                                                <td>{{arkhana.owner}}</td>
+                                                <td>{{arkhana.buyout}}</td>
+                                                <td>{{arkhana.quantity}}</td>
+                                                <td>{{arkhana.unitPrice}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+                <div class="col-sm-3">
+                        Cristal Chaos 
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                        <th scope="col">item</th>
+                                        <th scope="col">vendedor</th>
+                                        <th (click)="sort('buyout')" scope="col">buyout</th>
+                                        <th (click)="sort('quantity')"  scope="col">qtd</th>
+                                        <th (click)="sort('unitPrice')" scope="col">unitPrice</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr  *ngFor="let cristal of cristais">
+                                                <td>{{cristal.item}}</td>
+                                                <td>{{cristal.owner}}</td>
+                                                <td>{{cristal.buyout}}</td>
+                                                <td>{{cristal.quantity}}</td>
+                                                <td>{{cristal.unitPrice}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+                <div class="col-sm-3">
+                        Estilhaco
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                        <th scope="col">item</th>
+                                        <th scope="col">vendedor</th>
+                                        <th (click)="sort('buyout')"  scope="col">buyout</th>
+                                        <th (click)="sort('quantity')"  scope="col">qtd</th>
+                                        <th (click)="sort('unitPrice')" scope="col">unitPrice</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr  *ngFor="let estilhaco of estilhacos">
+                                                <td>{{estilhaco.item}}</td>
+                                                <td>{{estilhaco.owner}}</td>
+                                                <td>{{estilhaco.buyout}}</td>
+                                                <td>{{estilhaco.quantity}}</td>
+                                                <td>{{estilhaco.unitPrice}}</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+        </div>
+
+
+    <button (click)="atualizarValores()" >
+            Atualizar Valores
+    </button>
+    
+</body>
+</html>
